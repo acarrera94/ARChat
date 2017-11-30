@@ -14,6 +14,8 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     @IBOutlet var sceneView: ARSKView!
     
+    var newtextField = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +29,7 @@ class ViewController: UIViewController, ARSKViewDelegate {
         // Load the SKScene from 'Scene.sks'
         if let scene = SKScene(fileNamed: "Scene") {
             sceneView.presentScene(scene)
+            
         }
     }
     
@@ -56,9 +59,10 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: "👾")
+        let labelNode = SKLabelNode(text: newtextField)
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
+        labelNode.fontName = "HelveticaNeue-Thin"
         return labelNode;
     }
     
