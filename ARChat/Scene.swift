@@ -50,7 +50,7 @@ class Scene: SKScene {
             
             // Create a transform with a translation of 0.5 meters in front of the camera
             var translation = matrix_identity_float4x4
-            translation.columns.3.z = -0.5
+            translation.columns.3.z = -1.0
             let transform = simd_mul(currentFrame.camera.transform, translation)
             
             // Add a new anchor to the session
@@ -64,14 +64,14 @@ class Scene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene here
-        textField.frame = CGRect(x:0, y: ( view.bounds.height / 2) - 70, width:view.bounds.width, height: 100)
+        textField.frame = CGRect(x:0, y: ( view.bounds.height / 2) - 70, width:view.bounds.width, height: 50)
         
         
         //textField.borderStyle = UITextBorderStyle.roundedRect
         textField.textColor = UIColor.white
         textField.backgroundColor = UIColor.black.withAlphaComponent(0.50)
         textField.isOpaque = false
-        textField.font = UIFont(name: "HelveticaNeue-Thin", size: 90)
+        textField.font = UIFont(name: "HelveticaNeue-Thin", size: 40)
         textField.textAlignment = .center
         
         
